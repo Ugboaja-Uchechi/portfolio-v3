@@ -5,6 +5,7 @@ import LogoComponent from "../subComponents/LogoComponent";
 import PowerButton from "../subComponents/PowerButton";
 import SocialIcons from "../subComponents/SocialIcons";
 import { YinYang } from "./AllSvgs";
+import Intro from "./Intro";
 
 const MainContainer = styled.div`
 background: ${props => props.theme.body};
@@ -34,7 +35,7 @@ z-index: 2;
 `
 
 const Projects = styled(NavLink)`
-color: ${props => props.theme.text};
+color: ${props => props.click ? props.theme.body : props.theme.text};
 position: absolute;
 top: 50%;
 left: calc(1rem + 2vw);
@@ -56,7 +57,7 @@ justify-content: space-evenly;
 `
 
 const AboutMe = styled(NavLink)`
-  color: ${props => props.theme.text};
+  color: ${props => props.click ? props.theme.body : props.theme.text};
   text-decoration: none;
   z-index: 2;
 `
@@ -90,14 +91,28 @@ const Center = styled.button`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  transition: all 1s ease;
 
   &>:first-child {
     animation: ${rotate} infinite 1.5s linear;
   }
 
   &>:last-child {
+    display: ${props => props.click ? "none" : "inline-block"};
     padding-top: 1rem;
   }
+`
+
+const DarkDiv = styled.div`
+background-color: #000;
+position: absolute;
+top: 0;
+bottom: 0;
+right: 50%;
+width: ${props => props.click ? "50%" : "0%"};;
+height: ${props => props.click ? "100%" : "0%"};
+z-index: 1;
+transition: height 0.5s ease, width 1s ease 0.5s;
 `
 
 const Main = () => {
@@ -106,22 +121,23 @@ const Main = () => {
   return (
     <>
       <MainContainer>
+        <DarkDiv click= {click} />
         <Container>
           <PowerButton />
-          <LogoComponent />
-          <SocialIcons />
+          <LogoComponent theme={click ? 'dark' : 'light'} />
+          <SocialIcons theme={click ? 'dark' : 'light'} />
           <Center click= {click}>
-            <YinYang onClick={()=> handleClick()} width={200} height={200} fill="currentColor" />
-            <span>Click Here </span>
+            <YinYang onClick={()=> handleClick()} width={click ? 120 :200} height={click ? 120 :200} fill="currentColor" />
+            <span onClick={()=> handleClick()}>Click Here </span>
           </Center>
           <Contact to={{pathname: "mailto:stephanieugboaja@gmail.com"}}>
             <h2>Say hi..</h2>
           </Contact>
-          <Projects to="/project">
+          <Projects to="/project" click= {click}>
             <h2>Projects</h2>
           </Projects>
           <BottomBar>
-            <AboutMe to="/about">
+            <AboutMe to="/about" click= {click}>
               <h2>About.</h2>
             </AboutMe>
             <Skills to="/skill">
@@ -129,6 +145,7 @@ const Main = () => {
             </Skills>
           </BottomBar>
         </Container>
+        {click ? <Intro click= {click} /> : null}
       </MainContainer>
     </>
   )

@@ -2,6 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import { Github, LinkedIn } from "../components/AllSvgs";
+import { DarkTheme } from '../components/Theme'
 
 const Icons = styled.div`
   display: flex;
@@ -22,23 +23,23 @@ const Icons = styled.div`
 const Line = styled.span`
 width: 2px;
 height: 8rem;
-background-color: ${props => props.theme.text};
+background-color: ${props => props.color === "dark" ? DarkTheme.text : DarkTheme.body};
 `
 
-const SocialIcons = () => {
+const SocialIcons = (props) => {
   return (
       <Icons>
         <div>
           <NavLink style={{color: "inherit"}} target="_blank" to={{pathname:"https://github.com/Ugboaja-Uchechi"}}>
-            <Github width={25} height={25} fill="currentColor" />
+            <Github width={25} height={25} fill={props.theme === "dark" ? DarkTheme.text : DarkTheme.body} />
           </NavLink>
         </div>
         <div>
           <NavLink style={{color: "inherit"}} target="_blank" to={{pathname:"https://www.linkedin.com/in/stephanie-ugboaja/"}}>
-            <LinkedIn width={25} height={25} fill="currentColor" />
+            <LinkedIn width={25} height={25} fill={props.theme === "dark" ? DarkTheme.text : DarkTheme.body} />
           </NavLink>
         </div>
-        <Line />
+        <Line color={props.theme} />
       </Icons>
   )
 }
