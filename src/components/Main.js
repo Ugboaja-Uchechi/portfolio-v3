@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styled, { keyframes } from "styled-components";
+import { motion } from "framer-motion";
 import { NavLink } from "react-router-dom";
 import LogoComponent from "../subComponents/LogoComponent";
 import PowerButton from "../subComponents/PowerButton";
@@ -131,17 +132,29 @@ const Main = () => {
             <span onClick={()=> handleClick()}>Click Here </span>
           </Center>
           <Contact to={{pathname: "mailto:stephanieugboaja@gmail.com"}}>
-            <h2>Say hi..</h2>
+            <motion.h2
+              whileHover={{scale: 1.1}}
+              whileTap={{scale: 0.9}}
+            >Say hi..</motion.h2>
           </Contact>
           <Projects to="/project" click= {click}>
-            <h2>Projects</h2>
+            <motion.h2
+              whileHover={{scale: 1.1}}
+              whileTap={{scale: 0.9}}
+            >Projects</motion.h2>
           </Projects>
           <BottomBar>
             <AboutMe to="/about" click= {click}>
-              <h2>About.</h2>
+              <motion.h2
+                whileHover={{scale: 1.1}}
+              whileTap={{scale: 0.9}}
+              >About.</motion.h2>
             </AboutMe>
             <Skills to="/skill">
-              <h2>My Skills.</h2>
+              <motion.h2
+                whileHover={{scale: 1.1}}
+              whileTap={{scale: 0.9}}
+              >My Skills.</motion.h2>
             </Skills>
           </BottomBar>
         </Container>
