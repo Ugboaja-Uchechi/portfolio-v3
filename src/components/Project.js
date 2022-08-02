@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import Books from "../assests/images/books.jpg"
 import ProjectData from "../data/ProjectData";
@@ -37,13 +37,21 @@ const Grid = styled.div`
 `
 
 const Project = () => {
+
+  const [numbers, setNumbers] = useState(0);
+
+  useEffect(() => {
+    let num = (window.innerHeight - 40)/29;
+    setNumbers(parseInt(num));
+  }, [])
+
   return (
     <MainContainer>
       <Container>
         <LogoComponent />
         <PowerButton />
         <SocialIcons />
-        <AnchorComponent />
+        <AnchorComponent number={numbers} />
         <Center>
           <Grid>
             {
