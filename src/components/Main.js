@@ -26,7 +26,7 @@ const Container = styled.div`
 padding: 2rem;
 `
 
-const Contact = styled(NavLink)`
+const Contact = styled.a`
 color: ${props => props.theme.text};
 position: absolute;
 top: 2rem;
@@ -131,7 +131,7 @@ const Main = () => {
             <YinYang onClick={()=> handleClick()} width={click ? 120 :200} height={click ? 120 :200} fill="currentColor" />
             <span onClick={()=> handleClick()}>Click Here </span>
           </Center>
-          <Contact to={{pathname: "mailto:stephanieugboaja@gmail.com"}}>
+          <Contact href="mailto:stephanieugboaja@gmail.com" target="_blank" rel="noreferrer">
             <motion.h2
               initial={{
                 y:-200,
