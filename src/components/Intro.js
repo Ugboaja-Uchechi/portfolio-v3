@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
-import Profile from "../assests/images/delete-profile.png"
+import Profile from "../assests/images/profile.png"
 
 const Box = styled(motion.div)`
 position: absolute;
