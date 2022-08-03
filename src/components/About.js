@@ -1,7 +1,7 @@
 import React from "react";
 import styled, { keyframes, ThemeProvider } from "styled-components";
 import { DarkTheme } from "./Theme";
-import Astronaut from "../assests/images/spaceman.png"
+import Rocket from "../assests/images/rocket.png"
 import LogoComponent from "../subComponents/LogoComponent";
 import SocialIcons from "../subComponents/SocialIcons";
 import PowerButton from "../subComponents/PowerButton";
@@ -65,7 +65,7 @@ const About = () => {
         <ParticleComponent theme="dark" />
 
         <SpaceMan>
-          <img src={Astronaut} alt="astronaut" />
+          <img src={Rocket} alt="Rocket" />
         </SpaceMan>
 
         <Main>
