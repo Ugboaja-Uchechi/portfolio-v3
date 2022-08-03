@@ -133,12 +133,28 @@ const Main = () => {
           </Center>
           <Contact to={{pathname: "mailto:stephanieugboaja@gmail.com"}}>
             <motion.h2
+              initial={{
+                y:-200,
+                transition: { type:'spring', duration: 1.5, delay:1}
+              }}
+              animate={{
+                y:0,
+                transition: { type:'spring', duration: 1.5, delay:1}
+              }}
               whileHover={{scale: 1.1}}
               whileTap={{scale: 0.9}}
             >Say hi..</motion.h2>
           </Contact>
           <Projects to="/project" click= {click}>
             <motion.h2
+                initial={{
+                  y:-200,
+                  transition: { type:'spring', duration: 1.5, delay:1}
+              }}
+              animate={{
+                  y:0,
+                  transition: { type:'spring', duration: 1.5, delay:1}
+              }}
               whileHover={{scale: 1.1}}
               whileTap={{scale: 0.9}}
             >Projects</motion.h2>
@@ -146,14 +162,30 @@ const Main = () => {
           <BottomBar>
             <AboutMe to="/about" click= {click}>
               <motion.h2
+                initial={{
+                  y:200,
+                  transition: { type:'spring', duration: 1.5, delay:1}
+                }}
+                animate={{
+                  y:0,
+                  transition: { type:'spring', duration: 1.5, delay:1}
+                }}
                 whileHover={{scale: 1.1}}
-              whileTap={{scale: 0.9}}
+                whileTap={{scale: 0.9}}
               >About.</motion.h2>
             </AboutMe>
             <Skills to="/skill">
               <motion.h2
+                initial={{
+                  y:200,
+                  transition: { type:'spring', duration: 1.5, delay:1}
+                }}
+                animate={{
+                  y:0,
+                  transition: { type:'spring', duration: 1.5, delay:1}
+                }}
                 whileHover={{scale: 1.1}}
-              whileTap={{scale: 0.9}}
+                whileTap={{scale: 0.9}}
               >My Skills.</motion.h2>
             </Skills>
           </BottomBar>

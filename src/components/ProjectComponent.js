@@ -1,9 +1,10 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom"
+import { motion } from 'framer-motion'
 // import { NavLink } from "react-router-dom";
 
-const Box = styled.div`
+const Box = styled(motion.div)`
 width: calc(10rem + 15vw);
 height: 20rem;
 padding: 1rem;
@@ -71,25 +72,45 @@ display: flex;
 justify-content: space-between;
 `
 
+const Container = styled(motion.div)``;
+
+// Framer Motion Configuration
+const Item = {
+  hidden:{
+      scale:0
+  },
+  show:{
+      scale:1,
+      transition: {
+          type: 'spring',
+          duration: 0.5
+      }
+  }
+}
+
 const ProjectComponent = (props) => {
   const {name, description, img, tags, link1, link2} = props.projects;
   return (
-    <Box>
-      <Image img={img} />
-      <Title>{name}</Title>
-      <Description>{description}</Description>
-      <HashTags>
-        {
-          tags.map((t,id) => {
-            return <Tag key={id}>#{t}</Tag>
-          })
-        }
-      </HashTags>
-      <Links>
-        <Link target="_blank" to={{pathname: link1}}>Live Link</Link>
-        <Link target="_blank" to={{pathname: link2}}>Source Code</Link>
-      </Links>
-    </Box>
+    <Container
+      variants={Item}
+    >
+      <Box>
+        <Image img={img} />
+        <Title>{name}</Title>
+        <Description>{description}</Description>
+        <HashTags>
+          {
+            tags.map((t,id) => {
+              return <Tag key={id}>#{t}</Tag>
+            })
+          }
+        </HashTags>
+        <Links>
+          <Link target="_blank" to={{pathname: link1}}>Live Link</Link>
+          <Link target="_blank" to={{pathname: link2}}>Source Code</Link>
+        </Links>
+      </Box>
+    </Container>
   )
 }
 

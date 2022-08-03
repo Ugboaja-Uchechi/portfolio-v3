@@ -7,8 +7,10 @@ import LogoComponent from "../subComponents/LogoComponent";
 import PowerButton from "../subComponents/PowerButton";
 import SocialIcons from "../subComponents/SocialIcons";
 import ProjectComponent from "./ProjectComponent";
+import { motion } from 'framer-motion'
+import BigTitle from "../subComponents/BigTitle"
 
-const MainContainer = styled.div`
+const MainContainer = styled(motion.div)`
   background-image: url(${Books});
   background-size: cover;
   background-repeat: no-repeat;
@@ -36,6 +38,22 @@ const Grid = styled.div`
   gap: calc(1rem + 2vw);
 `
 
+// Framer Motion Config
+
+const container = {
+
+  hidden: {opacity:0},
+  show: {
+    opacity:1,
+
+    transition:{
+      staggerChildren: 0.5,
+      duration: 0.5,
+    }
+  }
+
+}
+
 const Project = () => {
 
   const [numbers, setNumbers] = useState(0);
@@ -46,7 +64,14 @@ const Project = () => {
   }, [])
 
   return (
-    <MainContainer>
+    <MainContainer
+      variants={container}
+      initial='hidden'
+      animate='show'
+      exit={{
+        opacity:0, transition:{duration: 0.5}
+      }}
+    >
       <Container>
         <LogoComponent />
         <PowerButton />
@@ -61,6 +86,7 @@ const Project = () => {
             }
           </Grid>
         </Center>
+        <BigTitle text="Projects" top="5rem" left="5rem" />
       </Container>
     </MainContainer>
   )
