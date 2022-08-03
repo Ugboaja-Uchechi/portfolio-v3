@@ -8,12 +8,14 @@ import About from './components/About';
 import Project from './components/Project';
 import Skill from './components/Skills';
 import GlobalStyle from './globalStyles';
+import SoundBar from './subComponents/SoundBar';
 
 function App() {
   return (
     <>
       <GlobalStyle />
         <ThemeProvider theme={LightTheme}>
+          <SoundBar />
           <Routes>
             <Route exact path='/' element={<Main />} />
             <Route exact path='/about' element={<About />} />
