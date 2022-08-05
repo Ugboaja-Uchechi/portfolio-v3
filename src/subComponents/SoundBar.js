@@ -1,6 +1,7 @@
 import React, { useRef, useState } from "react";
 import styled, { keyframes } from "styled-components";
 import Music from "../assests/audio/u-said-it.mp3"
+import { mediaQueries } from "../components/Theme";
 
 const Box = styled.div`
   display: flex;
@@ -25,6 +26,11 @@ const Box = styled.div`
   &>*:nth-child(5){
     animation-delay: 0.8s;
   }
+
+  ${mediaQueries(40)`
+  left:1rem;
+  top:10rem;
+  `};
 `
 
 const play = keyframes`
@@ -47,6 +53,11 @@ animation-play-state: ${props => props.click ? "running" : "paused"};
 height: 1rem;
 width: 2px;
 margin:0 0.1rem;
+
+${mediaQueries(40)`
+  height:0.5rem;
+  width:1px;
+`};
 `
 
 const SoundBar = () => {

@@ -1,9 +1,14 @@
 import React, { useEffect, useRef } from "react";
 import styled from "styled-components";
 import { Anchor, Link } from "../components/AllSvgs";
+import { mediaQueries } from "../components/Theme";
 
 const Container = styled.div`
   position: relative;
+
+  ${mediaQueries(40)`
+  display:none;
+`};
 `
 
 const Slider = styled.div`
@@ -67,7 +72,14 @@ const AnchorComponent = (props) => {
       <Slider ref={ref}>
         {
           [...Array(props.number)].map((x, id) => {
-            return <Link key={id} width={25} height={25} fill="currentColor" className="chain" />
+            return <Link 
+              key={id} 
+              width={25} 
+              height={25} 
+              fill="currentColor" 
+              style={{ padding: "0.1rem 0" }} 
+              className="chain" 
+            />
           })
         }
         <Anchor width={70} height={70} fill="currentColor" />

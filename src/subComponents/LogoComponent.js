@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { DarkTheme } from "../components/Theme";
+import { DarkTheme, mediaQueries } from "../components/Theme";
 
 const Logo = styled.h1`
   display: inline-block;
@@ -11,6 +11,12 @@ const Logo = styled.h1`
   top: 2rem;
   left: 2rem;
   z-index: 2;
+
+  ${mediaQueries(40)`
+  font-size:1.5em;
+  left:1rem;
+  top:2rem;
+  `};
 `
 
 const LogoComponent = (props) => {

@@ -4,6 +4,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import { PowerBtn } from "../components/AllSvgs";
+import { mediaQueries } from "../components/Theme";
 
 const Power = styled.button`
 
@@ -36,17 +37,25 @@ cursor: pointer;
   text-decoration: none;
   color: inherit;
 }
-`
+
+${mediaQueries(40)`
+  width: 2rem;
+  height: 2rem;
+  svg{
+    width:20px;
+    height:20px;
+  }
+
+`};
+`;
 
 const PowerButton = () => {
   return (
-    <>
     <Power>
       <NavLink to="/">
         <PowerBtn width={30} height={30} fill="currentColor" />
       </NavLink>
     </Power>
-    </>
   )
 }
 
