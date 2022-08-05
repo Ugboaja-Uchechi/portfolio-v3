@@ -1,27 +1,40 @@
+import { lazy, Suspense } from 'react';
 import { ThemeProvider } from 'styled-components';
-import { Route, Routes } from 'react-router';
-import './App.css';
-import { LightTheme } from './components/Theme';
-// import { DarkTheme } from './components/Theme';
-import Main from './components/Main';
-import About from './components/About';
-import Project from './components/Project';
-import Skill from './components/Skills';
+import { AnimatePresence } from 'framer-motion';
+import { Route, Routes, useLocation } from 'react-router';
 import GlobalStyle from './globalStyles';
-import SoundBar from './subComponents/SoundBar';
+import { LightTheme } from './components/Theme';
+import Loading from './subComponents/Loading';
+
+// Components
+
+const Main = lazy(() => import("./components/Main"));
+const About = lazy(() => import("./components/About"));
+const Skill = lazy(() => import("./components/Skills"));
+const Project = lazy(() => import("./components/Project"));
+const SoundBar = lazy(() => import("./subComponents/SoundBar"));
+
 
 function App() {
+
+  const location = useLocation();
+
   return (
     <>
       <GlobalStyle />
         <ThemeProvider theme={LightTheme}>
-          <SoundBar />
-          <Routes>
-            <Route exact path='/' element={<Main />} />
-            <Route exact path='/about' element={<About />} />
-            <Route exact path='/project' element={<Project />} />
-            <Route exact path='/skill' element={<Skill />} />
-          </Routes>
+          <Suspense fallback={<Loading />}>
+            <SoundBar />
+            <AnimatePresence exitBeforeEnter>
+              <Routes location={location} key={location.pathname}>
+                <Route exact path='/' element={<Main />} />
+                <Route exact path='/about' element={<About />} />
+                <Route exact path='/project' element={<Project />} />
+                <Route exact path='/skill' element={<Skill />} />
+              </Routes>
+            </AnimatePresence>
+          </Suspense>
+
         </ThemeProvider>
     </>
   );
