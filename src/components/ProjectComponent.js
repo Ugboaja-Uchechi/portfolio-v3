@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import { motion } from 'framer-motion';
+import { mediaQueries } from "./Theme";
+
 // background-color: #ffcdb2;
 
 const Box = styled(motion.div)`
@@ -11,12 +13,11 @@ padding-bottom: 3rem;
 color: ${props => props.theme.text};
 border: 2px solid ${props => props.theme.text};
 backdrop-filter: blur(2px);
-box-shadow: 0 0 1rem 0 rgba(0,0,0,0.2);
+box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
 cursor: pointer;
 
 display: flex;
 flex-direction: column;
-z-index: 5;
 
 &:hover {
   color: #000;
@@ -24,6 +25,19 @@ z-index: 5;
   border: 1px solid ${props => props.theme.text};
   transition: all 0.3s ease;
 }
+
+${mediaQueries(50)`
+  width:calc(60vw);
+`};
+${mediaQueries(30)`
+  height:18rem;
+`};
+
+${mediaQueries(25)`
+  height:14rem;
+  padding:0.8rem;
+  backdrop-filter: none;
+`};
 `
 
 const Image = styled.div`
@@ -33,6 +47,10 @@ height: 60%;
 background-size: cover;
 border: 1px solid transparent;
 background-position: center center;
+
+${mediaQueries(25)`
+  height:70%;
+`};
 
 ${Box}:hover &{
   border: 1px solid ${props => props.theme.text};
@@ -48,6 +66,19 @@ font-family: "Karla", sans-serif;
 font-weight: 700;
 border-bottom: 1px solid ${props => props.theme.text};
 width: 100%;
+${mediaQueries(40)`
+font-size:calc(0.8em + 1vw);
+
+`};
+
+${mediaQueries(25)`
+  font-size:calc(0.6em + 1vw);
+`};
+
+
+${Box}:hover & {
+  border-bottom: 1px solid ${(props) => props.theme.body};
+}
 `
 
 const Description = styled.h4`
@@ -59,7 +90,13 @@ font-weight: 500;
 `
 
 const HashTags = styled.div`
-padding: 0.7rem 0;
+  padding: 0.7rem 0;
+  display: flex;
+  flex-wrap: wrap;
+
+  ${mediaQueries(25)`  
+    font-size:calc(0.5em + 1vw);
+  `};
 `
 
 const Tag = styled.span`
@@ -85,7 +122,9 @@ a:hover {
 }
 `
 
-const Container = styled(motion.div)``;
+const Container = styled(motion.div)`
+z-index: 6;
+`;
 
 // Framer Motion Configuration
 const Item = {

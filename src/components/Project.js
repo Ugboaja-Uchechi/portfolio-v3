@@ -1,14 +1,17 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, lazy, Suspense } from "react";
 import styled from "styled-components";
 import Books from "../assests/images/books.jpg"
 import ProjectData from "../data/ProjectData";
-import AnchorComponent from "../subComponents/Anchor";
-import LogoComponent from "../subComponents/LogoComponent";
-import PowerButton from "../subComponents/PowerButton";
-import SocialIcons from "../subComponents/SocialIcons";
 import ProjectComponent from "./ProjectComponent";
 import { motion } from 'framer-motion'
-import BigTitle from "../subComponents/BigTitle"
+import Loading from "../subComponents/Loading";
+import { mediaQueries } from "./Theme";
+
+const AnchorComponent = lazy(() => import("../subComponents/Anchor"));
+const SocialIcons = lazy(() => import("../subComponents/SocialIcons"));
+const PowerButton = lazy(() => import("../subComponents/PowerButton"));
+const LogoComponent = lazy(() => import("../subComponents/LogoComponent"));
+const BigTitle = lazy(() => import("../subComponents/BigTitle"));
 
 const MainContainer = styled(motion.div)`
   background-image: url(${Books});
@@ -30,12 +33,20 @@ const Center = styled.div`
   justify-content: center;
   align-items: center;
   padding-top: 10rem;
+
+  ${mediaQueries(30)`
+    padding-top: 7rem;
+  `};
 `
 
 const Grid = styled.div`
   display: grid;
   grid-template-columns: repeat(2, minmax(calc(10rem + 15vw), 1fr));
   gap: calc(1rem + 2vw);
+
+  ${mediaQueries(50)`
+    grid-template-columns: 100%;
+  `};
 `
 
 // Framer Motion Config
@@ -64,21 +75,22 @@ const Project = () => {
   }, [])
 
   return (
-    <MainContainer
-      variants={container}
-      initial='hidden'
-      animate='show'
-      exit={{
-        opacity:0, transition:{duration: 0.5}
-      }}
-    >
+    <Suspense fallback={<Loading />}>
+      <MainContainer
+        variants={container}
+        initial='hidden'
+        animate='show'
+        exit={{
+          opacity:0, transition:{duration: 0.5}
+        }}
+      >
       <Container>
         <LogoComponent />
         <PowerButton />
         <SocialIcons />
         <AnchorComponent number={numbers} />
         <Center>
-          <Grid>
+          <Grid variants={container} initial="hidden" animate="show">
             {
               ProjectData.map(projects => {
                 return <ProjectComponent key={projects.id} projects={projects} />
@@ -88,7 +100,9 @@ const Project = () => {
         </Center>
         <BigTitle text="Projects" top="5rem" left="5rem" />
       </Container>
-    </MainContainer>
+      </MainContainer>
+    </Suspense>
+
   )
 }
 
