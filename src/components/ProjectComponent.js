@@ -1,14 +1,13 @@
 import React from "react";
 import styled from "styled-components";
-import { Link } from "react-router-dom"
-import { motion } from 'framer-motion'
-// import { NavLink } from "react-router-dom";
+import { motion } from 'framer-motion';
+// background-color: #ffcdb2;
 
 const Box = styled(motion.div)`
 width: calc(10rem + 15vw);
 height: 20rem;
 padding: 1rem;
-padding-bottom: 5rem;
+padding-bottom: 3rem;
 color: ${props => props.theme.text};
 border: 2px solid ${props => props.theme.text};
 backdrop-filter: blur(2px);
@@ -20,8 +19,8 @@ flex-direction: column;
 z-index: 5;
 
 &:hover {
-  color: ${props => props.theme.body};
-  background-color: ${props => props.theme.text};
+  color: #000;
+  background-color: #f5cac3;
   border: 1px solid ${props => props.theme.text};
   transition: all 0.3s ease;
 }
@@ -36,7 +35,7 @@ border: 1px solid transparent;
 background-position: center center;
 
 ${Box}:hover &{
-  border: 2px solid ${props => props.theme.text};
+  border: 1px solid ${props => props.theme.text};
 }
 
 `
@@ -60,7 +59,7 @@ font-weight: 500;
 `
 
 const HashTags = styled.div`
-padding: 0.5rem 0;
+padding: 0.7rem 0;
 `
 
 const Tag = styled.span`
@@ -69,7 +68,21 @@ padding-right: 0.5rem;
 
 const Links = styled.div`
 display: flex;
-justify-content: space-between;
+justify-content: center;
+
+a {
+  color: rgb(0 0 0);
+  text-decoration: none;
+  padding: 0.5rem calc(0.8rem + 1vw);
+  border-radius: 0px 0px 0px 25px;
+  font-size: calc(0.7em + 0.5vw);
+  margin-top: 0.5rem
+}
+
+a:hover {
+  font-size: calc(0.8em + 0.5vw);
+  background-color: #ffb4a2;
+}
 `
 
 const Container = styled(motion.div)``;
@@ -106,8 +119,8 @@ const ProjectComponent = (props) => {
           }
         </HashTags>
         <Links>
-          <Link target="_blank" to={{pathname: link1}}>Live Link</Link>
-          <Link target="_blank" to={{pathname: link2}}>Source Code</Link>
+          <a target="_blank" rel="noreferrer" href={link2}>Live Link</a>
+          <a target="_blank" rel="noreferrer" href={link1}>Source Code</a>
         </Links>
       </Box>
     </Container>
