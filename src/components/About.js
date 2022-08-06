@@ -14,11 +14,6 @@ const ParticleComponent = lazy(() =>
 )
 const BigTitle = lazy(() => import('../subComponents/BigTitle'))
 
-// import LogoComponent from "../subComponents/LogoComponent";
-// import SocialIcons from "../subComponents/SocialIcons";
-// import PowerButton from "../subComponents/PowerButton";
-// import ParticleComponent from "../subComponents/ParticleComponent";
-
 const Box =styled(motion.div)`
 background-color: ${props => props.theme.body};
 width: 100vw;
@@ -119,10 +114,10 @@ const About = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1, transition: { duration: 1, delay: 1 } }}
           >
-            I'm a front-end developer located in Nigeria. I love to create simple yet beautiful websites with great user experience.
+            I'm a full-stack developer. I love to create simple yet beautiful websites with great user experience.
             <br /><br />
 
-            I'm interested in the whole frontend stack Like trying new things and building great projects. I'm an independent freelancer and blogger. I love to write blogs and read books.
+            I'm interested in the whole frontend stack Like trying new things and building great projects.
             <br /><br />
 
             I believe everything is an Art when you put your consciousness in it. You can connect with me via social links.

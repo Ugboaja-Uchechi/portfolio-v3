@@ -3,7 +3,7 @@ import styled, { ThemeProvider } from "styled-components";
 import { motion } from "framer-motion";
 import { LightTheme, mediaQueries } from "./Theme";
 import Loading from "../subComponents/Loading";
-import { Design, Develope } from "./AllSvgs";
+import { DataBase, Develope } from "./AllSvgs";
 
 const SocialIcons = lazy(() => import("../subComponents/SocialIcons"));
 const PowerButton = lazy(() => import("../subComponents/PowerButton"));
@@ -154,22 +154,6 @@ const Skill = () => {
           <PowerButton />
           <ParticleComponent theme="light" />
           <Main>
-            <Title>
-              <Design width={40} height={40} /> Designer
-            </Title>
-            <Description>
-              I love to create design which speaks, Keep it clean, minimal and simple.
-            </Description>
-            <Description>
-              <strong>Skills</strong>
-              <p>Html, Css, Js, React, Redux, Sass, Bootstrap, Tailwind, Firebase etc.</p>
-            </Description>
-            <Description>
-              <strong>Tools</strong>
-              <p>VScode, Github, Codepen etc.</p>
-            </Description>
-          </Main>
-          <Main>
           <Title>
               <Develope width={40} height={40} /> Frontend Developer
             </Title>
@@ -178,11 +162,27 @@ const Skill = () => {
             </Description>
             <Description>
               <strong>Skills</strong>
-              <p>Html, Css, Js, React, Redux, Sass, Bootstrap, Tailwind, Firebase etc.</p>
+              <p>Html, Css, Js, React, Redux, Sass, Bootstrap, Tailwind, Jest.</p>
             </Description>
             <Description>
               <strong>Tools</strong>
-              <p>VScode, Github, Codepen etc.</p>
+              <p>VScode, Github etc.</p>
+            </Description>
+          </Main>
+          <Main>
+            <Title>
+              <DataBase width={40} height={40} /> Backend Designer
+            </Title>
+            <Description>
+              I love to create design which speaks, Keep it clean, minimal and simple.
+            </Description>
+            <Description>
+              <strong>Skills</strong>
+              <p>Ruby, RubyonRails, SQL</p>
+            </Description>
+            <Description>
+              <strong>Tools</strong>
+              <p>VScode, Github etc.</p>
             </Description>
           </Main>
           <BigTitle text="Skills" top="80%" right="30%" />

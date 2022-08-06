@@ -48,18 +48,17 @@ z-index: 2;
 `
 
 const Projects = styled(NavLink)`
-color: ${props => props.click ? props.theme.body : props.theme.text};
-position: absolute;
-top: 50%;
-left: calc(1rem + 2vw);
-transform: translate(-50%, -50%) rotate(-90deg);
-text-decoration: none;
-z-index: 2;
-
-@media only screen and (max-width: 50em) {
-  text-shadow: ${(props) => (props.click ? "0 0 4px #000" : "none")};
-}
-`
+  color: ${(props) => (props.click ? props.theme.body : props.theme.text)};
+  position: absolute;
+  top: 50%;
+  left: calc(1rem + 2vw);
+  transform: translate(-50%, -50%) rotate(-90deg);
+  z-index: 1;
+  text-decoration: none;
+  @media only screen and (max-width: 50em) {
+    text-shadow: ${(props) => (props.click ? "0 0 4px #000" : "none")};
+  }
+`;
 
 const BottomBar = styled.div`
 
@@ -251,7 +250,24 @@ const Main = () => {
               </motion.h3>
             </Contact>
           )}
-          {mq ? (
+          <Projects click={+click} to="/Project">
+            <motion.h2
+              onClick={() => setpath("Project")}
+              initial={{
+                y: -200,
+                transition: { type: "spring", duration: 1.5, delay: 1 },
+              }}
+              animate={{
+                y: 0,
+                transition: { type: "spring", duration: 1.5, delay: 1 },
+              }}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+            >
+              Projects
+            </motion.h2>
+          </Projects>
+          {/* {mq ? (
             <Projects click={+click} onClick={() => setpath("project")} to="/project">
               <motion.h2
                 initial={{
@@ -285,7 +301,7 @@ const Main = () => {
                 Projects
               </motion.h2>
             </Projects>
-          )}
+          )} */}
           <BottomBar>
           <AboutMe
               onClick={() => setClick(false)}
