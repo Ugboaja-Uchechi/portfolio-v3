@@ -158,7 +158,8 @@ const Skill = () => {
               <Develope width={40} height={40} /> Frontend Developer
             </Title>
             <Description>
-              I value business or brand for which i'm creating, thus i enjoy bringing new ideas to life.
+              I love to create sites and bring new ideas to life which speaks, using clean, simple and minimal code.
+              {/* I value business or brand for which i'm creating, thus i enjoy bringing new ideas to life. */}
             </Description>
             <Description>
               <strong>Skills</strong>
@@ -171,10 +172,10 @@ const Skill = () => {
           </Main>
           <Main>
             <Title>
-              <DataBase width={40} height={40} /> Backend Designer
+              <DataBase width={40} height={40} /> Backend Engineer
             </Title>
             <Description>
-              I love to create design which speaks, Keep it clean, minimal and simple.
+              I build and maintain web architecture, and writing code that communicates between the website’s database and the user's browser e.t.c.
             </Description>
             <Description>
               <strong>Skills</strong>
