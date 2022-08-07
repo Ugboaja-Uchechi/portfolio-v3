@@ -41,5 +41,4 @@ const ProjectData = [
     link2: "https://math-sorcerer.netlify.app/calculator"
   }
 ]
-
 export default ProjectData;
