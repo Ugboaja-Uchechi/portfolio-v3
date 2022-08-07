@@ -34,9 +34,8 @@ ${mediaQueries(30)`
 `};
 
 ${mediaQueries(25)`
-  height:14rem;
-  padding:0.8rem;
-  backdrop-filter: none;
+  height: 21rem;
+  padding: 1rem 0.8rem;
 `};
 `
 

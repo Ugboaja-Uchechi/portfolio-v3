@@ -25,7 +25,7 @@ const ProjectData = [
   {
     id: 3,
     name: "IP Address Tracker",
-    description: "IP Address Tracker is a web applcation. Users can see their IP Address on the map on the initial page load. Search for any IP addresses or domains and see the key information and location.",
+    description: "IP Address Tracker is a web app that allows users search for  IP addresses and see the key information and location.",
     img: Ip,
     tags: ["JavaScript", "HTML", "css"],
     link1: "https://github.com/Ugboaja-Uchechi/ip-address-tracker",
@@ -34,7 +34,7 @@ const ProjectData = [
   {
     id: 4,
     name: "Math Magicians",
-    description: "Math Magicians is a web app. A calculator site that solves basic math operations which can be accessed on any screen size.",
+    description: "Math Magicians is a calculator site that solves basic math operations which can be accessed on any screen size.",
     img: Math,
     tags: ["React", "JavaScript", "css"],
     link1: "https://github.com/Ugboaja-Uchechi/math-sorcerer",
