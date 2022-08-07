@@ -30,7 +30,8 @@ ${mediaQueries(50)`
   width:calc(60vw);
 `};
 ${mediaQueries(30)`
-  height:18rem;
+  height: 21rem;
+  padding-bottom: 0.8rem;
 `};
 
 ${mediaQueries(25)`
