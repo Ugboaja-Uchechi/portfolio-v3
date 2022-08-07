@@ -63,7 +63,7 @@ const Projects = styled(NavLink)`
 const BottomBar = styled.div`
 
 position: absolute;
-bottom: 2.5rem;
+bottom: 4.5rem;
 left: 0;
 right: 0;
 width: 100%;
