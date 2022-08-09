@@ -1,6 +1,6 @@
 import Vacay from "../assests/images/vacay.png"
 import Space from "../assests/images/space-x.png"
-import Ip from "../assests/images/ip-tracker.png"
+import Meme from "../assests/images/meme.png"
 import Math from "../assests/images/math.png"
 
 const ProjectData = [
@@ -24,12 +24,12 @@ const ProjectData = [
   },
   {
     id: 3,
-    name: "IP Address Tracker",
-    description: "IP Address Tracker is a web app that allows users search for  IP addresses and see the key information and location.",
-    img: Ip,
-    tags: ["JavaScript", "HTML", "css"],
-    link1: "https://github.com/Ugboaja-Uchechi/ip-address-tracker",
-    link2: "https://ip-address-tracker1.netlify.app/"
+    name: "Meme Generator",
+    description: "Meme generator is a web app that allows users generate a meme image and create a new meme.",
+    img: Meme,
+    tags: ["React", "Imgflip API", "css"],
+    link1: "https://github.com/Ugboaja-Uchechi/meme-generator",
+    link2: "https://meme-generator-tc.netlify.app/"
   },
   {
     id: 4,
