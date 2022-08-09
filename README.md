@@ -1,4 +1,8 @@
  # Portfolio-v3
+ 
+ ## Description
+ 
+ A third version of my personal portfolio to showcase my skills, projects and more about me.
 
 ## live Demo link
 
