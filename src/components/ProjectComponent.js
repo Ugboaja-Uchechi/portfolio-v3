@@ -3,7 +3,6 @@ import styled from "styled-components";
 import { motion } from 'framer-motion';
 import { mediaQueries } from "./Theme";
 import ReactGA from 'react-ga'
-// import useAnalyticsEventTracker from './useAnalyticsEventTracker';
 
 // background-color: #ffcdb2;
 
