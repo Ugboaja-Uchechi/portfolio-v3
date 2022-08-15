@@ -160,8 +160,8 @@ const ProjectComponent = (props) => {
           }
         </HashTags>
         <Links>
-          <a target="_blank" rel="noreferrer" href={link2} onClick={()=>gaEventTracker({link2})}>Live Link</a>
-          <a target="_blank" rel="noreferrer" href={link1} onClick={()=>gaEventTracker({link1})}>Source Code</a>
+          <a target="_blank" rel="noreferrer" href={link2} onClick={()=>gaEventTracker({name})}>Live Link</a>
+          <a target="_blank" rel="noreferrer" href={link1} onClick={()=>gaEventTracker({name})}>Source Code</a>
         </Links>
       </Box>
     </Container>
