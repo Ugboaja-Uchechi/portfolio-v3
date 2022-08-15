@@ -152,6 +152,7 @@ const ProjectComponent = (props) => {
       label: label,
     })
   }
+  
   return (
     <Container
       variants={Item}
