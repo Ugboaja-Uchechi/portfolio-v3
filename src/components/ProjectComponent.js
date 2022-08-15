@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { motion } from 'framer-motion';
 import { mediaQueries } from "./Theme";
+import useAnalyticsEventTracker from './useAnalyticsEventTracker';
 
 // background-color: #ffcdb2;
 
@@ -142,6 +143,7 @@ const Item = {
 
 const ProjectComponent = (props) => {
   const {name, description, img, tags, link1, link2} = props.projects;
+  const gaEventTracker = useAnalyticsEventTracker('Contact us');
   return (
     <Container
       variants={Item}
@@ -158,8 +160,8 @@ const ProjectComponent = (props) => {
           }
         </HashTags>
         <Links>
-          <a target="_blank" rel="noreferrer" href={link2}>Live Link</a>
-          <a target="_blank" rel="noreferrer" href={link1}>Source Code</a>
+          <a target="_blank" rel="noreferrer" href={link2} onClick={()=>gaEventTracker({link2})}>Live Link</a>
+          <a target="_blank" rel="noreferrer" href={link1} onClick={()=>gaEventTracker({link1})}>Source Code</a>
         </Links>
       </Box>
     </Container>
