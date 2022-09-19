@@ -120,7 +120,7 @@ const About = () => {
             I'm highly interested in the frontend stack. I love to learn new languages, concepts, and building great projects.
             <br /><br />
 
-            I believe everything is an Art when you put your consciousness in it. You can connect with me via social links.
+            I believe everything is Art when you put your consciousness in it. You can connect with me via social links.
           </Main>
           <BigTitle text='ABOUT' top='10%' left='5%' />
         </Box>

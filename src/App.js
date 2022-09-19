@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import { lazy, Suspense } from 'react';
 import { ThemeProvider } from 'styled-components';
 import { AnimatePresence } from 'framer-motion';
@@ -6,9 +5,6 @@ import { Route, Routes, useLocation } from 'react-router';
 import GlobalStyle from './globalStyles';
 import { LightTheme } from './components/Theme';
 import Loading from './subComponents/Loading';
-import ReactGA from 'react-ga';
-const TRACKING_ID = "G-KMNG7J30S0"; // TRACKING_ID
-ReactGA.initialize(TRACKING_ID);
 
 // Components
 
@@ -22,9 +18,7 @@ const SoundBar = lazy(() => import("./subComponents/SoundBar"));
 function App() {
 
   const location = useLocation();
-  useEffect(() => {
-    ReactGA.pageview(window.location.pathname + window.location.search);
-  }, []);
+
   return (
     <>
       <GlobalStyle />

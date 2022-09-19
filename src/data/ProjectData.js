@@ -38,7 +38,7 @@ const ProjectData = [
     img: Math,
     tags: ["React", "JavaScript", "css"],
     link1: "https://github.com/Ugboaja-Uchechi/math-sorcerer",
-    link2: "https://math-sorcerer.netlify.app/calculator"
+    link2: "https://math-sorcerer.netlify.app"
   }
 ]
 export default ProjectData;
