@@ -6,7 +6,7 @@
 
 ## live Demo link
 
-[Live Link](https://tired-coder.herokuapp.com/)
+[Live Link](https://tired-coder.vercel.app/)
 
 ## Screenshot
 Few screenshots
