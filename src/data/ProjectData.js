@@ -1,6 +1,6 @@
 import Vacay from "../assests/images/vacay.png"
 import Space from "../assests/images/space-x.png"
-import Meme from "../assests/images/meme.png"
+import Countries from "../assests/images/countries.png"
 import Math from "../assests/images/math.png"
 
 const ProjectData = [
@@ -24,12 +24,12 @@ const ProjectData = [
   },
   {
     id: 3,
-    name: "Meme Generator",
-    description: "Meme generator is a web app that allows users generate a meme image and create a new meme.",
-    img: Meme,
-    tags: ["React", "Imgflip API", "css"],
-    link1: "https://github.com/Ugboaja-Uchechi/meme-generator",
-    link2: "https://meme-generator-tc.netlify.app/"
+    name: "REST Countries API",
+    description: "REST Countries API is a web app that allows users to see all countries and their details when clicked.",
+    img: Countries,
+    tags: ["Next.Js", "REST Countries API", "CSS"],
+    link1: "https://github.com/Ugboaja-Uchechi/countries",
+    link2: "https://allcountry.vercel.app/"
   },
   {
     id: 4,
