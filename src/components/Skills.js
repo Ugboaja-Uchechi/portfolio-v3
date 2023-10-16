@@ -163,7 +163,7 @@ const Skill = () => {
             </Description>
             <Description>
               <strong>Skills</strong>
-              <p>React, Next.Js, JavaScript, HTML, CSS, SASS, Bootstrap, Tailwind, Jest.</p>
+              <p>React, Next.Js, JavaScript, HTML, CSS, Tailwind, Jest.</p>
             </Description>
             <Description>
               <strong>Tools</strong>
