@@ -1,4 +1,4 @@
-import Vacay from "../assests/images/vacay.png"
+import Dictionary from "../assests/images/dictionary.png"
 import Space from "../assests/images/space-x.png"
 import Countries from "../assests/images/countries.png"
 import Math from "../assests/images/math.png"
@@ -6,12 +6,12 @@ import Math from "../assests/images/math.png"
 const ProjectData = [
   {
     id: 1,
-    name: "VacayHome",
-    description: "Vacay home is a rental site in which users can create reservations for vacation homes and create listings.",
-    img: Vacay,
-    link1: "https://github.com/Ugboaja-Uchechi/Vacayhome-front-end",
-    tags: ["React", "RubyonRails", "Bootstrap", "Jest", "css"],
-    link2: "https://vacay-home.netlify.app/"
+    name: "Dictionary web app",
+    description: "Search for words using the input field, play the audio file for a word when it's available, switch between available fonts",
+    img: Dictionary,
+    link1: "https://github.com/Ugboaja-Uchechi/dictionary",
+    tags: ["Next", "Typescript", "CSS"],
+    link2: "https://dictionsearch.vercel.app/"
   },
   {
     id: 2,
