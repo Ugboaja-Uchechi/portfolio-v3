@@ -5,6 +5,7 @@ import { Route, Routes, useLocation } from 'react-router';
 import GlobalStyle from './globalStyles';
 import { LightTheme } from './components/Theme';
 import Loading from './subComponents/Loading';
+import { Analytics } from "@vercel/analytics/react"
 
 // Components
 
@@ -21,6 +22,7 @@ function App() {
 
   return (
     <>
+    <Analytics />
       <GlobalStyle />
         <ThemeProvider theme={LightTheme}>
           <Suspense fallback={<Loading />}>
