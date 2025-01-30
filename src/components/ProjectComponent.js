@@ -159,7 +159,7 @@ const ProjectComponent = (props) => {
         </HashTags>
         <Links>
           <a target="_blank" rel="noreferrer" href={link2}>Live Link</a>
-          <a target="_blank" rel="noreferrer" href={link1}>Source Code</a>
+          {link1 === '' ? '' : <a target="_blank" rel="noreferrer" href={link1}>Source Code</a>}
         </Links>
       </Box>
     </Container>

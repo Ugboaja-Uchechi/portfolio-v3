@@ -1,26 +1,26 @@
 import Dictionary from "../assests/images/dictionary.png"
-import Space from "../assests/images/space-x.png"
+import AutoMagic from "../assests/images/automagic-portfolio.png"
 import Countries from "../assests/images/countries.png"
-import Math from "../assests/images/math.png"
+import DOPE from "../assests/images/dope.png"
 
 const ProjectData = [
   {
     id: 1,
-    name: "Dictionary web app",
-    description: "Search for words using the input field, play the audio file for a word when it's available, switch between available fonts",
-    img: Dictionary,
-    link1: "https://github.com/Ugboaja-Uchechi/dictionary",
-    tags: ["Next", "Typescript", "CSS"],
-    link2: "https://dictionsearch.vercel.app/"
+    name: "DOPE",
+    description: "A production ready chrome extension that gamifies learning experience and connect users to a vibrant community of learners.",
+    img: DOPE,
+    tags: ["React", "Vite", "TypeScript", "Tailwind", "CSS"],
+    link1: "",
+    link2: "https://dope.foundafrica.tech/"
   },
   {
     id: 2,
-    name: "Space Traveler's Hub",
-    description: "Space Traveler's Hub is a web app that allows users to book rockets and join selected space missions.",
-    img: Space,
-    tags: ["React", "Bootstrap", "Jest", "css"],
-    link1: "https://github.com/Ugboaja-Uchechi/space-x-hub",
-    link2: "https://space-x-hub.netlify.app/"
+    name: "Automagic Agency Site",
+    description: "Built a production-ready website for an agency using Next.js, Tailwind CSS, and Framer Motion.",
+    img: AutoMagic,
+    tags: ["Next", "TypeScript", "Tailwind", "Framer Motion", "CSS"],
+    link1: "",
+    link2: "https://www.atmgc.xyz/"
   },
   {
     id: 3,
@@ -33,12 +33,12 @@ const ProjectData = [
   },
   {
     id: 4,
-    name: "Math Magicians",
-    description: "Math Magicians is a calculator site that solves basic math operations which can be accessed on any screen size.",
-    img: Math,
-    tags: ["React", "JavaScript", "css"],
-    link1: "https://github.com/Ugboaja-Uchechi/math-sorcerer",
-    link2: "https://math-sorcerer.netlify.app"
+    name: "Dictionary web app",
+    description: "Search for words using the input field, play the audio file for a word when it's available, switch between available fonts",
+    img: Dictionary,
+    link1: "https://github.com/Ugboaja-Uchechi/dictionary",
+    tags: ["Next", "Typescript", "CSS"],
+    link2: "https://dictionsearch.vercel.app/"
   }
 ]
 export default ProjectData;
